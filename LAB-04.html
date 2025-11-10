@@ -1,312 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <style>
-        body {
-            background-color: #cccccc; /* Grey background for the whole window */
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center; /* Center the page horizontally */
-            align-items: flex-start; /* Align page to the top */
-            padding: 20px; /* Spacing around the page */
-            margin: 0;
-        }
-
-        /* This container simulates the A4 page */
-        .a4-page {
-            width: 210mm; /* A4 width */
-            min-height: 297mm; /* A4 height */
-            background-color: #ffffff; /* White page color */
-            padding: 25px; /* Internal margins for content */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
-            
-            /* Styles moved from 'body' in previous example */
-            font-size: 13px;
-            color: #333;
-        }
-
-        /* Top navigation text */
-        .nav-steps {
-            font-size: 14px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        /* Red asterisk for required fields */
-        .required {
-            color: #A60000; /* Reddish color from image */
-            font-weight: bold;
-        }
-
-        /* Reddish, bold section headings */
-        .section-title {
-            color: #A60000;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        /* Use a table for form layout to align labels and fields */
-        .form-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .form-table td {
-            padding: 3px;
-            vertical-align: top;
-        }
-
-        /* Right-align labels */
-        .form-table label {
-            font-weight: bold;
-            display: block;
-            text-align: right;
-            padding-right: 10px;
-        }
-
-        /* Set label column width */
-        .form-table td:first-child {
-            width: 170px;
-        }
-
-        /* Comments section */
-        .comments-label {
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .comments-note {
-            font-size: 12px;
-            margin-bottom: 5px;
-        }
-
-        /* Checkbox groups */
-        .checkbox-group {
-            padding-left: 20px;
-        }
-
-        .checkbox-group input {
-            margin-right: 5px;
-        }
-         
-        /* Buttons */
-        .buttons {
-            margin-top: 20px;
-        }
-        
-        /* Footer text */
-        .footer {
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #ccc;
-            font-size: 12px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+<style>
+body{background-color:#cccccc;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;align-items:flex-start;padding:20px;margin:0}
+.a4-page{width:210mm;min-height:297mm;background-color:#ffffff;padding:25px;box-shadow:0 0 10px rgba(0,0,0,0.2);box-sizing:border-box;font-size:13px;color:#333}
+.nav-steps{font-size:14px;font-weight:bold;color:#555}
+.required{color:#A60000;font-weight:bold}
+.section-title{color:#A60000;font-size:16px;font-weight:bold;margin-top:20px;margin-bottom:10px}
+.form-table{width:100%;border-collapse:collapse}
+.form-table td{padding:3px;vertical-align:top}
+.form-table label{font-weight:bold;display:block;text-align:right;padding-right:10px}
+.form-table td:first-child{width:170px}
+.comments-label{font-weight:bold;margin-top:15px}
+.comments-note{font-size:12px;margin-bottom:5px}
+.checkbox-group{padding-left:20px}
+.checkbox-group input{margin-right:5px}
+.buttons{margin-top:20px}
+.footer{margin-top:15px;padding-top:10px;border-top:1px solid #ccc;font-size:12px}
+input[type="submit"],input[type="reset"]{background-color:#A60000;color:white;border:none;padding:8px 16px;border-radius:5px;cursor:pointer;font-weight:bold}
+input[type="submit"]:hover,input[type="reset"]:hover{background-color:#800000}
+@media (max-width:768px){.a4-page{width:100%;min-height:auto;padding:15px}.form-table td:first-child{width:auto}}
+</style>
 </head>
 <body>
-
-    <div class="a4-page">
-
-        <p><span class="required">*</span> Denotes Required Information</p>
-        <p class="nav-steps">&gt; 1 Donation &gt; 2 Confirmation &gt; Thank You!</p>
-
-        <form action="#" method="post">
-            
-            <h3 class="section-title">Donor Information</h3>
-            <table class="form-table">
-                <tr>
-                    <td><label for="first-name">First Name<span class="required">*</span></label></td>
-                    <td><input type="text" id="first-name" name="first_name" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="last-name">Last Name<span class="required">*</span></label></td>
-                    <td><input type="text" id="last-name" name="last_name" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="company">Company</label></td>
-                    <td><input type="text" id="company" name="company" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="address1">Address 1<span class="required">*</span></label></td>
-                    <td><input type="text" id="address1" name="address1" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="address2">Address 2</label></td>
-                    <td><input type="text" id="address2" name="address2" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="city">City<span class="required">*</span></label></td>
-                    <td><input type="text" id="city" name="city" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="state">State<span class="required">*</span></label></td>
-                    <td>
-                        <select id="state" name="state">
-                            <option value="">Select a State</option>
-                            </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="zip">Zip Code<span class="required">*</span></label></td>
-                    <td><input type="text" id="zip" name="zip" size="15"></td>
-                </tr>
-                <tr>
-                    <td><label for="country">Country<span class="required">*</span></label></td>
-                    <td>
-                        <select id="country" name="country">
-                            <option value="">Select a Country</option>
-                            </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="phone">Phone</label></td>
-                    <td><input type="text" id="phone" name="phone" size="20"></td>
-                </tr>
-                <tr>
-                    <td><label for="fax">Fax</label></td>
-                    <td><input type="text" id="fax" name="fax" size="20"></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email<span class="required">*</span></label></td>
-                    <td><input type="text" id="email" name="email" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label>Donation Amount<span class="required">*</span></label></td>
-                    <td>
-                        <input type="radio" name="donation_amount" value="none"> None
-                        <input type="radio" name="donation_amount" value="50"> $50
-                        <input type="radio" name="donation_amount" value="75"> $75
-                        <input type="radio" name="donation_amount" value="100"> $100
-                        <input type="radio" name="donation_amount" value="250"> $250
-                        <input type="radio" name="donation_amount" value="other"> Other
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="other_amount">(Check a button or type in your amount)</label></td>
-                    <td>Other Amount $ <input type="text" id="other_amount" name="other_amount" size="10"></td>
-                </tr>
-                <tr>
-                    <td><label for="recurring">Recurring Donation</label></td>
-                    <td>
-                        <input type="checkbox" id="recurring" name="recurring">
-                        I am interested in giving on a regular basis. (Check if yes)
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        Monthly Credit Card $ <input type="text" name="cc_amount" size="8">
-                        For <input type="text" name="cc_months" size="3"> Months
-                    </td>
-                </tr>
-            </table>
-
-            <h3 class="section-title">Honorarium and Memorial Donation Information</h3>
-            <table class="form-table">
-                <tr>
-                    <td><label>I would like to make this donation:</label></td>
-                    <td>
-                        <input type="radio" name="honor_type" value="honor"> To Honor<br>
-                        <input type="radio" name="honor_type" value="memory"> In Memory of
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="honor-name">Name</label></td>
-                    <td><input type="text" id="honor-name" name="honor_name" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="ack-to">Acknowledge Donation to:</label></td>
-                    <td><input type="text" id="ack-to" name="ack_to" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="honor-address">Address</label></td>
-                    <td><input type="text" id="honor-address" name="honor_address" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="honor-city">City</label></td>
-                    <td><input type="text" id="honor-city" name="honor_city" size="30"></td>
-                </tr>
-                <tr>
-                    <td><label for="honor-state">State</label></td>
-                    <td>
-                        <select id="honor-state" name="honor_state">
-                            <option value="">Select a State</option>
-                            </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="honor-zip">Zip</label></td>
-                    <td><input type="text" id="honor-zip" name="honor_zip" size="15"></td>
-                </tr>
-            </table>
-
-            <h3 class="section-title">Additional Information</h3>
-            <p>Please enter your name, company or organization as you would like to it to appear in our publications:</p>
-            <table class="form-table">
-                <tr>
-                    <td><label for="pub-name">Name</label></td>
-                    <td><input type="text" id="pub-name" name="pub_name" size="30"></td>
-                </tr>
-            </table>
-            <div class="checkbox-group">
-                <input type="checkbox" id="anonymous" name="anonymous">
-                <label for="anonymous">I would like my gift to remain anonymous.</label><br>
-                
-                <input type="checkbox" id="matching" name="matching">
-                <label for="matching">My employer offers a matching gift program. I will mail the matching gift form.</label><br>
-                
-                <input type="checkbox" id="no-thanks" name="no_thanks">
-                <label for="no-thanks">Please save the cost of acknowledging this gift by not mailing a thank you letter.</label>
-            </div>
-
-            <p class="comments-label">Comments</p>
-            <p class="comments-note">(Please type any questions or feedback here)</p>
-            <textarea name="comments" rows="5" cols="60"></textarea>
-
-            <p class="comments-label">How may we contact you?</p>
-            <div class="checkbox-group">
-                <input type="checkbox" id="contact-email" name="contact_email">
-                <label for="contact-email">E-mail</label><br>
-                
-                <input type="checkbox" id="contact-postal" name="contact_postal">
-                <label for="contact-postal">Postal Mail</label><br>
-                
-                <input type="checkbox" id="contact-phone" name="contact_phone">
-                <label for="contact-phone">Telephone</label><br>
-                
-                <input type="checkbox" id="contact-fax" name="contact_fax">
-                <label for="contact-fax">Fax</label>
-            </div>
-
-            <p>I would like to receive newsletters and information about special events by:</p>
-            <div class="checkbox-group">
-                <input type="checkbox" id="news-email" name="news_email">
-                <label for="news-email">E-mail</label><br>
-                
-                <input type="checkbox" id="news-postal" name="news_postal">
-                <label for="news-postal">Postal Mail</label>
-            </div>
-            
-            <div class="checkbox-group" style="margin-top: 10px;">
-                <input type="checkbox" id="volunteer" name="volunteer">
-                <label for="volunteer">I would like information about volunteering with the</label>
-            </div>
-
-            <div class="buttons">
-                <input type="reset" value="Reset">
-                <input type="submit" value="Continue">
-            </div>
-        </form>
-
-        <div class="footer">
-            <p>&#128274; Donate online with confidence. [span_0](start_span)You are on a secure server.[span_0](end_span)</p>
-            <p>If you have any problems or questions, please contact support</p>
-        </div>
-    
-    </div> </body>
+<div class="a4-page">
+<p><span class="required">*</span> Denotes Required Information</p>
+<p class="nav-steps">&gt; 1 Donation &gt; 2 Confirmation &gt; Thank You!</p>
+<form onsubmit="return validateForm()">
+<h3 class="section-title">Donor Information</h3>
+<table class="form-table">
+<tr><td><label for="first-name">First Name<span class="required">*</span></label></td><td><input type="text" id="first-name" name="first_name" size="30"></td></tr>
+<tr><td><label for="last-name">Last Name<span class="required">*</span></label></td><td><input type="text" id="last-name" name="last_name" size="30"></td></tr>
+<tr><td><label for="email">Email<span class="required">*</span></label></td><td><input type="email" id="email" name="email" size="30"></td></tr>
+<tr><td><label>Donation Amount<span class="required">*</span></label></td><td>
+<input type="radio" name="donation_amount" value="none">None
+<input type="radio" name="donation_amount" value="50">$50
+<input type="radio" name="donation_amount" value="75">$75
+<input type="radio" name="donation_amount" value="100">$100
+<input type="radio" name="donation_amount" value="250">$250
+<input type="radio" name="donation_amount" value="other">Other
+</td></tr>
+<tr><td><label for="other_amount">(Check a button or type in your amount)</label></td><td>Other Amount $ <input type="text" id="other_amount" name="other_amount" size="10" style="display:none;"></td></tr>
+<tr><td><label for="recurring">Recurring Donation</label></td><td><input type="checkbox" id="recurring" name="recurring">I am interested in giving on a regular basis.</td></tr>
+<tr class="recurring-fields" style="display:none;"><td></td><td>Monthly Credit Card $ <input type="text" name="cc_amount" size="8"> For <input type="text" name="cc_months" size="3"> Months</td></tr>
+</table>
+<h3 class="section-title">Honorarium and Memorial Donation Information</h3>
+<table class="form-table">
+<tr><td><label>I would like to make this donation:</label></td><td>
+<input type="radio" name="honor_type" value="honor" id="to_honor">To Honor<br>
+<input type="radio" name="honor_type" value="memory" id="in_memory_of">In Memory of
+</td></tr>
+<tr><td><label for="honor-name">Name</label></td><td><input type="text" id="honor-name" name="honor_name" size="30"></td></tr>
+<tr><td><label for="ack-to">Acknowledge Donation to:</label></td><td><input type="text" id="ack-to" name="ack_to" size="30"></td></tr>
+<tr><td><label for="honor-address">Address</label></td><td><input type="text" id="honor-address" name="honor_address" size="30"></td></tr>
+<tr><td><label for="honor-city">City</label></td><td><input type="text" id="honor-city" name="honor_city" size="30"></td></tr>
+<tr><td><label for="honor-state">State</label></td><td><select id="honor-state" name="honor_state"><option value="">Select a State</option><option value="Dhaka">Dhaka</option><option value="Chittagong">Chittagong</option></select></td></tr>
+<tr><td><label for="honor-zip">Zip</label></td><td><input type="text" id="honor-zip" name="honor_zip" size="15"></td></tr>
+</table>
+<h3 class="section-title">Additional Information</h3>
+<p>Please enter your name, company or organization as you would like it to appear in our publications:</p>
+<table class="form-table"><tr><td><label for="pub-name">Name</label></td><td><input type="text" id="pub-name" name="pub_name" size="30"></td></tr></table>
+<div class="checkbox-group">
+<input type="checkbox" id="anonymous" name="anonymous"><label for="anonymous">I would like my gift to remain anonymous.</label><br>
+<input type="checkbox" id="matching" name="matching"><label for="matching">My employer offers a matching gift program. I will mail the matching gift form.</label><br>
+<input type="checkbox" id="no-thanks" name="no_thanks"><label for="no-thanks">Please save the cost of acknowledging this gift by not mailing a thank you letter.</label>
+</div>
+<p class="comments-label">Comments</p>
+<p class="comments-note">(Please type any questions or feedback here)</p>
+<textarea id="comments" name="comments" rows="5" cols="60"></textarea>
+<p>Password</p>
+<input type="password" id="password" name="password" size="30">
+<p>Confirm Password</p>
+<input type="password" id="confirm_password" name="confirm_password" size="30">
+<div class="buttons">
+<input type="reset" value="Reset">
+<input type="submit" value="Continue">
+</div>
+</form>
+<div class="footer">
+<p>&#128274; Donate online with confidence. <span>You are on a secure server.</span></p>
+<p>If you have any problems or questions, please contact support</p>
+</div>
+</div>
+<script>
+function validateForm(){
+const firstName=document.getElementById("first-name").value;
+const lastName=document.getElementById("last-name").value;
+const email=document.getElementById("email").value;
+const donationAmount=document.querySelector('input[name="donation_amount"]:checked');
+if(!firstName||!lastName||!email||!donationAmount){alert("Please fill in all required fields.");return false;}
+if(!validateEmail(email)){alert("Please enter a valid email address.");return false;}
+if(!validatePassword()){return false;}
+return true;
+}
+function validateEmail(email){const regex=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;return regex.test(email);}
+document.querySelectorAll('input[name="donation_amount"]').forEach((radioButton)=>{radioButton.addEventListener('change',function(){const otherAmountField=document.getElementById('other_amount');if(this.value==='other'){otherAmountField.style.display='inline-block';}else{otherAmountField.style.display='none';}});});
+document.getElementById('recurring').addEventListener('change',function(){const recurringFields=document.querySelector('.recurring-fields');if(recurringFields){recurringFields.style.display=this.checked?'block':'none';}});
+window.onload=function(){const stateSelect=document.querySelector('select[name="honor_state"]');const countrySelect=document.createElement('select');countrySelect.name="country";countrySelect.innerHTML='<option value="">Select a Country</option><option value="Bangladesh" selected>Bangladesh</option>';document.querySelector('form').appendChild(countrySelect);if(stateSelect)stateSelect.value="Dhaka";};
+function validatePassword(){const password=document.getElementById("password").value;const confirmPassword=document.getElementById("confirm_password").value;if(password!==confirmPassword){alert("Passwords do not match.");return false;}return true;}
+const resetButton=document.querySelector('input[type="reset"]');if(resetButton){resetButton.addEventListener('click',function(event){const confirmation=confirm("Are you sure you want to reset the form?");if(!confirmation){event.preventDefault();}});}
+document.querySelectorAll('input[name="honor_type"]').forEach((radioButton)=>{radioButton.addEventListener('change',function(){const nameField=document.getElementById('honor-name');if(this.value==='honor'){nameField.placeholder="Name to honor";}else if(this.value==='memory'){nameField.placeholder="Name in memory of";}});});
+const commentsField=document.getElementById("comments");if(commentsField){commentsField.addEventListener('input',function(){const charLimit=200;if(this.value.length>charLimit){alert("Character limit reached!");this.value=this.value.substring(0,charLimit);}});}
+const monthlyAmountField=document.querySelector('input[name="cc_amount"]');if(monthlyAmountField){monthlyAmountField.addEventListener('input',function(){const monthlyAmount=parseFloat(this.value)||0;const months=parseInt(document.querySelector('input[name="cc_months"]').value)||0;const total=monthlyAmount*months;let totalElement=document.getElementById('total-display');if(!totalElement){totalElement=document.createElement('p');totalElement.id='total-display';document.querySelector('form').appendChild(totalElement);}totalElement.textContent=`Total donation for ${months} months: $${total}`;});}
+</script>
+</body>
 </html>
