@@ -1,0 +1,53 @@
+/* General body style */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Common style for all sections */
+.section {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Unique background colors for each section */
+#about-me {
+    background-color: #ffefcc;
+}
+
+#education {
+    background-color: #d1f2eb;
+}
+
+#hobbies {
+    background-color: #f9d6d5;
+}
+
+/* Headings */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Paragraph styling */
+p {
+    text-align: justify;
+    font-size: 1em;
+    color: #444;
+}
+
+/* Custom horizontal rule */
+hr {
+    border: none;
+    height: 4px;
+    width: 70%;
+    margin: 30px auto;
+    background-color: #666;
+    border-radius: 5px;
+}

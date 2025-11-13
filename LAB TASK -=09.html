@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIUB - University Admission Form</title>
+    <meta name="author" content="Reza Hasan Mahmud">
+    <meta name="description" content="Online University Admission Form for AIUB new students.">
+    <meta name="keywords" content="AIUB, admission form, student registration, university form">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>American International University-Bangladesh (AIUB)</h1>
+    <h2>University Admission Form</h2>
+    <p>Please fill out the form carefully and submit all required details.</p>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        
+        <!-- Personal Information Section -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="fname">Full Name:</label><br>
+            <input type="text" id="fname" name="fullname" maxlength="50" required placeholder="Enter your full name"><br><br>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required placeholder="example@email.com"><br><br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="text" id="phone" name="phone" maxlength="15" required placeholder="e.g. 017XXXXXXXX"><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="3" cols="40" required placeholder="Enter your full address"></textarea><br><br>
+        </fieldset>
+
+        <!-- Academic Information Section -->
+        <fieldset>
+            <legend>Academic Information</legend>
+
+            <label for="hsc">HSC/Equivalent Institution:</label><br>
+            <input type="text" id="hsc" name="hsc_institution" maxlength="50" required><br><br>
+
+            <label for="hsc-result">HSC Result (GPA):</label><br>
+            <input type="text" id="hsc-result" name="hsc_result" maxlength="5" required><br><br>
+
+            <label for="ssc">SSC/Equivalent Institution:</label><br>
+            <input type="text" id="ssc" name="ssc_institution" maxlength="50" required><br><br>
+
+            <label for="ssc-result">SSC Result (GPA):</label><br>
+            <input type="text" id="ssc-result" name="ssc_result" maxlength="5" required><br><br>
+
+            <label for="department">Preferred Department:</label><br>
+            <select id="department" name="department" required>
+                <option value="">--Select Department--</option>
+                <option value="CSE">Computer Science and Engineering (CSE)</option>
+                <option value="EEE">Electrical and Electronic Engineering (EEE)</option>
+                <option value="BBA">Bachelor of Business Administration (BBA)</option>
+                <option value="ARCH">Architecture</option>
+            </select><br><br>
+
+            <label>Areas of Interest:</label><br>
+            <input type="checkbox" id="ai" name="interest" value="AI">
+            <label for="ai">Artificial Intelligence</label><br>
+            <input type="checkbox" id="web" name="interest" value="Web Development">
+            <label for="web">Web Development</label><br>
+            <input type="checkbox" id="network" name="interest" value="Networking">
+            <label for="network">Networking</label><br>
+            <input type="checkbox" id="data" name="interest" value="Data Science">
+            <label for="data">Data Science</label><br><br>
+
+            <label for="apply-date">Application Date:</label><br>
+            <input type="date" id="apply-date" name="apply_date" required><br><br>
+
+            <label for="documents">Upload Required Documents:</label><br>
+            <input type="file" id="documents" name="documents" required><br><br>
+        </fieldset>
+
+        <!-- Submit and Reset Buttons -->
+        <fieldset>
+            <legend>Form Actions</legend>
+            <input type="submit" value="Submit Application">
+            <input type="reset" value="Reset Form">
+        </fieldset>
+
+    </form>
+
+</body>
+</html>

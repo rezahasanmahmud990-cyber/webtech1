@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-edit {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .btn-delete {
+      background-color: #f44336;
+      color: white;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li.student-item {
+      background-color: white;
+      margin: 8px auto;
+      padding: 10px;
+      border-radius: 6px;
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight {
+      background-color: #ffff99 !important;
+    }
+
+    #highlight-btn {
+      background-color: #008cba;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student List Manager</h1>
+
+  <form id="student-form">
+    <input type="text" id="student-name" placeholder="Enter student name" maxlength="50" required>
+    <button type="submit">Add Student</button>
+  </form>
+
+  <ul id="student-list"></ul>
+
+  <script>
+    // 1. Event Listener for Form Submission
+    document.getElementById('student-form').addEventListener('submit', addStudent);
+
+    // 2. Add Student Function
+    function addStudent(event) {
+      event.preventDefault(); // Prevent form submission
+
+      let studentName = document.getElementById('student-name').value;
+      if (studentName === '') {
+        alert('Please enter a student name');
+        return;
+      }
+
+      // 4. Create New List Item
+      let li = document.createElement('li');
+      li.classList.add('student-item');
+
+      // 5. Create Span for Student Name
+      let span = document.createElement('span');
+      span.textContent = studentName;
+
+      // 6. Create Edit Button
+      let editButton = document.createElement('button');
+      editButton.textContent = 'Edit';
+      editButton.classList.add('btn-edit');
+      editButton.addEventListener('click', function() {
+        editStudent(li, span);
+      });
+
+      // 6. Create Delete Button
+      let deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.classList.add('btn-delete');
+      deleteButton.addEventListener('click', function() {
+        deleteStudent(li);
+      });
+
+      // Append elements
+      li.appendChild(span);
+      li.appendChild(editButton);
+      li.appendChild(deleteButton);
+
+      document.getElementById('student-list').appendChild(li);
+      document.getElementById('student-name').value = ''; // Reset input
+    }
+
+    // 8. Delete Student
+    function deleteStudent(studentElement) {
+      studentElement.remove();
+    }
+
+    // 9. Edit Student
+    function editStudent(studentElement, studentNameElement) {
+      let newName = prompt('Enter the new name:', studentNameElement.textContent);
+      if (newName !== null && newName !== '') {
+        studentNameElement.textContent = newName;
+      }
+    }
+
+    // 10. Change List Style (Highlight)
+    function changeListStyle() {
+      let students = document.querySelectorAll('.student-item');
+      students.forEach(student => {
+        student.classList.toggle('highlight');
+      });
+    }
+
+    // 11. Add Highlight Button
+    let changeStyleButton = document.createElement('button');
+    changeStyleButton.id = 'highlight-btn';
+    changeStyleButton.textContent = 'Highlight Students';
+    changeStyleButton.addEventListener('click', changeListStyle);
+    document.body.appendChild(changeStyleButton);
+  </script>
+
+</body>
+</html>
